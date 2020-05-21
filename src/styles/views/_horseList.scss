@@ -1,0 +1,47 @@
+.horses {
+    margin: 20px;
+    border: 1px solid $black;
+    min-width:200px;
+    width: max-content;
+    padding: 10px 20px;
+    text-align: left;
+    display:flex;
+    flex-direction: column;
+
+    .row {
+        border-bottom:1px solid $black;
+        a{
+            font-size:16px;
+            padding:10px 0;
+            color:$black;
+            text-decoration: none;
+            display:block;
+            cursor: pointer;
+
+            &:hover{
+                color:$blue;
+            }
+        }
+
+        &:last-child{
+            border:0px;
+        }
+    }
+
+    .header{
+        font-size:16px;
+        font-weight:bold;
+        background-color: transparent;
+        color:$black;
+        min-height:0px;
+
+    }
+}
+
+@media (min-width: 1024px) {
+    .horses{
+        margin:20px auto;
+        text-align:center;
+    }
+}
+
