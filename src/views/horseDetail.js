@@ -8,6 +8,8 @@ import EditHorse from '../components/Horse';
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import { LoadingMessage } from "../config/messages";
+import { history } from '../helpers';
+
 
 
 class HorseDetail extends Component {
@@ -94,7 +96,7 @@ class HorseDetail extends Component {
         const { dispatch } = this.props;
         //Ensure name is not empty
         this.state.name === '' ? (this.setState({ validationError: true, validationErrMsg: 'Name is required' })) :
-        dispatch(horseAction.editHorseInfo(params.id, this.buildPayload()));
+            dispatch(horseAction.editHorseInfo(params.id, this.buildPayload()));
     };
     static getDerivedStateFromProps(props, state) {
         if (props.name !== state.name && state.readOnly) {
@@ -115,7 +117,10 @@ class HorseDetail extends Component {
                 <Loader message={LoadingMessage} />
             ) : this.state.error ? (<Error errorMsg={this.state.errorMsg} />) :
                     (<div className="horse-detail">
-                        <Button text='Edit Horse' disabled={!this.state.readOnly} onClick={this.handleClick}></Button>
+                        <div className="buttonContainer">
+                            <Button text='Go Back' disabled={false} onClick={() => history.goBack()}></Button>
+                            <Button text='Edit Horse' disabled={!this.state.readOnly} onClick={this.handleClick}></Button>
+                        </div>
                         <EditHorse readOnly={this.state.readOnly} name={this.state.name} food={this.state.food} height={this.state.height} weight={this.state.weight} display={true} handleSubmit={this.handleSubmit} handleChange={this.handleChange} onCancelClick={this.handleClick} error={this.validationError} errMsg={this.validationErrMsg}></EditHorse>
                     </div>)
 

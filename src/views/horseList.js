@@ -107,7 +107,9 @@ class HorseList extends Component {
                                 );
                             })}
                         </div>
-                        <Button text='Add Horse' disabled={this.state.showAddHorse} onClick={this.handleClick}></Button>
+                        <div className="buttonContainer">
+                            <Button text='Add Horse' disabled={this.state.showAddHorse} onClick={this.handleClick}></Button>
+                        </div>
                         <AddHorse readOnly={false} name={this.state.name} food={this.state.food} height={this.state.height} weight={this.state.weight} display={this.state.showAddHorse} handleSubmit={this.handleSubmit} handleChange={this.handleChange} onCancelClick={this.handleClick} error={this.validationError} errMsg={this.validationErrMsg}></AddHorse>
                     </div>)
 
