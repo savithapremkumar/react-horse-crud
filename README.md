@@ -27,9 +27,9 @@ npm run test
 
 ## Omissions of non-essential features due to time constraint
 
-- Restricting the number of horses displayed in the list to 10 aka pagination needs to be implemented
+- Restricting the number of horses displayed in the list to 10 aka  pagination needs to be implemented
 - Task 5 / comparison is omitted
-- Test coverage for 'C' and 'U' in CRU functionality
+- Test coverage for actions and reducers, in-depth component and view testing
 
 ## Known issues
 

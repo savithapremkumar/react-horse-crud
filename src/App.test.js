@@ -1,9 +1,26 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import { shallow, mount } from 'enzyme';
 import App from './App';
+import Header from './components/Header';
+import { MemoryRouter } from 'react-router';
+import HorseList from './views/horseList';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+
+
+it('renders without crashing', () => {
+  shallow(<App />);
 });
+
+
+it('renders App header', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(Header).prop("heading")).toEqual("Race Horse Stats");
+  console.log(wrapper.debug());
+});
+
+//TODO : Test for default and other routing
