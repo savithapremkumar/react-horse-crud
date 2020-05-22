@@ -37,3 +37,5 @@ npm test
 - Some proptype errors in console, [doesn't break functionality]
 
 
+![](react-horse-crud.gif)
+
