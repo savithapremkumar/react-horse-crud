@@ -22,7 +22,7 @@ npm start
 Use the below command to run tests.
 
 ```bash
-npm run test
+npm test
 ```
 
 ## Omissions of non-essential features due to time constraint
